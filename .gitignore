@@ -1,0 +1,11 @@
+*.iml
+.idea
+test-output
+target
+logs
+.DS_Store
+selenium-grid.yml
+id_rsa.txt
+allure-results
+src/test/resources/temp
+*.eml
