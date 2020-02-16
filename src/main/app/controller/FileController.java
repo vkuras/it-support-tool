@@ -24,7 +24,7 @@ public class FileController {
     public void uploadFile(@RequestParam("path")String path, MultipartFile file){
         service.saveFile(file,path);
     }
-    @GetMapping("/download/")
+    @GetMapping("/download")
     public byte[] getFile(@RequestParam("path")String path){
         return service.getFile(path);
     }
