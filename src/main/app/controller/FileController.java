@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+
 @RestController
 public class FileController {
     @Autowired
@@ -20,8 +22,8 @@ public class FileController {
     public String getFiles(){
         return service.getFiles();
     }
-    @PutMapping("/upload")
-    public void uploadFile(@RequestParam("path")String path, MultipartFile file){
+    @PutMapping(value = "/upload", consumes = "multipart/form-data")
+    public void uploadFile(@RequestParam("path")String path, @RequestParam("file") MultipartFile file)  {
         service.saveFile(file,path);
     }
     @GetMapping("/download")
