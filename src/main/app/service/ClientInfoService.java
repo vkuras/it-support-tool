@@ -5,6 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClientInfoService {
     public String getInfo() {
-        return null;
+        return String.valueOf(System.getProperties());
     }
 }
